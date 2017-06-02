@@ -8,13 +8,58 @@ import static org.mockito.Mockito.when;
 
 public class TestHelper {
 
-    static char[][] labyrinthWithExit() {
+    static char[][] labyrinthWithClearExit() {
         /* @formatter:off */
         return new char[][] {
             {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},
             {WALL, FREE, FREE, FREE, FREE, WALL, FREE, FREE, FREE, WALL},
             {WALL, FREE, WALL, WALL, FREE, WALL, FREE, WALL, FREE, WALL},
             {WALL, FREE, FREE, WALL, FREE, WALL, FREE, WALL, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, FREE, FREE, WALL, FREE, FREE},
+            {WALL, FREE, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},
+            {WALL, FREE, FREE, FREE, FREE, FREE, FREE, FREE, FREE, WALL},
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL}
+        };
+        /* @formatter:on */
+    }
+    
+    static char[][] labyrinthWithUnclearExit() {
+        /* @formatter:off */
+        return new char[][] {
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},
+            {WALL, FREE, FREE, FREE, FREE, WALL, FREE, FREE, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, WALL, FREE, WALL, FREE, WALL},
+            {WALL, FREE, FREE, WALL, FREE, WALL, FREE, WALL, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, FREE, FREE, WALL, FREE, FREE},
+            {WALL, FREE, WALL, WALL, WALL, WALL, WALL, WALL, FREE, WALL},
+            {WALL, FREE, FREE, FREE, FREE, FREE, FREE, FREE, WALL, WALL},
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL}
+        };
+        /* @formatter:on */
+    }
+    
+    static char[][] labyrinthWithClearExitAndClosedLoop() {
+        /* @formatter:off */
+        return new char[][] {
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},
+            {WALL, FREE, FREE, FREE, FREE, WALL, FREE, FREE, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, WALL, FREE, WALL, FREE, WALL},
+            {WALL, FREE, FREE, WALL, FREE, WALL, FREE, WALL, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, FREE, FREE, WALL, FREE, FREE},
+            {WALL, FREE, WALL, WALL, WALL, WALL, WALL, WALL, FREE, WALL},
+            {WALL, FREE, FREE, FREE, FREE, FREE, FREE, FREE, FREE, WALL},
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL}
+        };
+        /* @formatter:on */
+    }
+    
+    static char[][] labyrinthWithClearExitAndOpenLoop() {
+        /* @formatter:off */
+        return new char[][] {
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},
+            {WALL, FREE, FREE, FREE, FREE, WALL, FREE, FREE, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, WALL, FREE, FREE, FREE, WALL},
+            {WALL, FREE, FREE, WALL, FREE, WALL, FREE, FREE, FREE, WALL},
             {WALL, FREE, WALL, WALL, FREE, FREE, FREE, WALL, FREE, FREE},
             {WALL, FREE, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},
             {WALL, FREE, FREE, FREE, FREE, FREE, FREE, FREE, FREE, WALL},
@@ -37,8 +82,38 @@ public class TestHelper {
         };
         /* @formatter:on */
     }
+    
+    static char[][] labyrinthWithoutExitAndClosedLoop() {
+        /* @formatter:off */
+        return new char[][] {
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},
+            {WALL, FREE, FREE, FREE, FREE, WALL, FREE, FREE, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, WALL, FREE, WALL, FREE, WALL},
+            {WALL, FREE, FREE, WALL, FREE, WALL, FREE, WALL, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, FREE, FREE, WALL, FREE, WALL},//blocked exit
+            {WALL, FREE, WALL, WALL, WALL, WALL, WALL, WALL, FREE, WALL},
+            {WALL, FREE, FREE, FREE, FREE, FREE, FREE, FREE, FREE, WALL},
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL}
+        };
+        /* @formatter:on */
+    }
+    
+    static char[][] labyrinthWithoutExitAndOpenLoop() {
+        /* @formatter:off */
+        return new char[][] {
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},
+            {WALL, FREE, FREE, FREE, FREE, WALL, FREE, FREE, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, WALL, FREE, FREE, FREE, WALL},
+            {WALL, FREE, FREE, WALL, FREE, WALL, FREE, FREE, FREE, WALL},
+            {WALL, FREE, WALL, WALL, FREE, FREE, FREE, WALL, FREE, WALL},//blocked exit
+            {WALL, FREE, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},
+            {WALL, FREE, FREE, FREE, FREE, FREE, FREE, FREE, FREE, WALL},
+            {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL}
+        };
+        /* @formatter:on */
+    }
 
-    static char[][] labyrinthWithRoute() {
+    static char[][] labyrinthWithClearRoute() {
         /* @formatter:off */
         return new char[][] {
             {WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL, WALL},

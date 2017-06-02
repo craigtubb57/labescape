@@ -1,8 +1,8 @@
 package com.craigtubb;
 
-import static com.craigtubb.TestHelper.labyrinthWithExit;
+import static com.craigtubb.TestHelper.labyrinthWithClearExit;
 import static com.craigtubb.TestHelper.labyrinthWithoutExit;
-import static com.craigtubb.TestHelper.labyrinthWithRoute;
+import static com.craigtubb.TestHelper.labyrinthWithClearRoute;
 import static com.craigtubb.TestHelper.route;
 import static org.junit.Assert.*;
 
@@ -12,9 +12,9 @@ public class LabEscapeTest {
 
     @Test
     public void withExit() throws NoEscapeException {
-        char[][] result = LabEscape.drawPathForEscape(labyrinthWithExit(), 3, 1);
+        char[][] result = LabEscape.drawPathForEscape(labyrinthWithClearExit(), 3, 1);
         
-        assertArrayEquals(labyrinthWithRoute(), result);
+        assertArrayEquals(labyrinthWithClearRoute(), result);
     }
 
     @Test(expected = NoEscapeException.class)
