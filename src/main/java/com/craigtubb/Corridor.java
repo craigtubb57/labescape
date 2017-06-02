@@ -9,6 +9,7 @@ public class Corridor {
     public Corridor(int x, int y, Corridor next) {
         this.x = x;
         this.y = y;
+        this.next = next;
     }
 
     public int getX() {
