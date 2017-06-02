@@ -12,7 +12,7 @@ public class LabEscapeTest {
 
     @Test
     public void withExit() throws NoEscapeException {
-        char[][] result = LabEscape.drawPathForEscape(labyrinthWithoutExit(), 3, 1);
+        char[][] result = LabEscape.drawPathForEscape(labyrinthWithExit(), 3, 1);
         
         assertArrayEquals(labyrinthWithRoute(), result);
     }

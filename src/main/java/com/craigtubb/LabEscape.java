@@ -44,7 +44,7 @@ public class LabEscape {
         
         Labyrinth lab = new Labyrinth(labyrinth);
         RouteFinder finder = new RouteFinder(lab, FREE, startX, startY);
-        RoutePainter painter = new RoutePainter(lab, finder.find());
+        RoutePainter painter = new RoutePainter(lab, finder.find(), PATH);
         return painter.paint().getLabyrinth();
     }
 }
