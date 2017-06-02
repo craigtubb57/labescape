@@ -19,12 +19,16 @@ public class Labyrinth {
         labyrinth[x][y] = ch;
     }
     
-    public boolean hasPoint(int x, int y) {
+    public boolean hasCharAtPoint(char ch, int x, int y) {
         try {
-            return getPoint(x, y) > -1;
+            return getPoint(x, y) == ch;
         } catch(ArrayIndexOutOfBoundsException e) {
             return false;
         }
+    }
+    
+    public boolean isExit(int x, int y) {
+        return x == 0 || x == labyrinth.length - 1 || y == 0 || y == labyrinth[x].length - 1;
     }
 
     public char[][] getLabyrinth() {
