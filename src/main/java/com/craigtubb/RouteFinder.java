@@ -24,10 +24,10 @@ public class RouteFinder {
         return startCorridor;
     }
 
-    private Corridor findNext(int x, int y) throws NoEscapeException {
+    private Corridor findNext(int x, int y) {
         return IntStream.rangeClosed(x - 1, x + 1).boxed().flatMap(
                 row -> IntStream.rangeClosed(y - 1, y + 1).boxed().map(col -> new AbstractMap.SimpleEntry<>(row, col)))
-                .filter(pair -> labyrinth.hasPoint(pair.getKey(), pair.getValue())).map(pair -> findNext(pair.getKey(), pair.getValue())).findFirst().orElseThrow(noEscape());
+                .filter(pair -> labyrinth.hasPoint(pair.getKey(), pair.getValue())).map(pair -> findNext(pair.getKey(), pair.getValue())).map(next -> new Corridor(x, y, next)).findFirst().orElse(null);
     }
     
     private static Supplier<NoEscapeException> noEscape() {
