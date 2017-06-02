@@ -1,12 +1,13 @@
 package com.craigtubb;
+
 /**
  * Please implement your solution here
  */
 public class LabEscape {
 
-    private static final char WALL = 'O';
-    private static final char FREE = ' ';
-    private static final char PATH = '•';
+    public static final char WALL = 'O';
+    public static final char FREE = ' ';
+    public static final char PATH = '•';
 
     /**
      * @param labyrinth
@@ -25,7 +26,6 @@ public class LabEscape {
 
         /**
          * Thoughts:<br>
-         * Convert matrix to 2d char array<br>
          * Convert 2d char array to tree of objects with root being starting point<br>
          * Each object has references to adjacent spaces<br>
          * Call recursive function to get adjacent space objects<br>
@@ -34,12 +34,17 @@ public class LabEscape {
          * Remaining tree will be single escape route<br>
          * Throw NoEscapeException if tree is empty<br>
          * Iterate escape route to update 2d char array with route<br>
-         * Convert 2d char array to matrix and return<br>
+         * Return updated 2d char array
          * 
-         * Potential classes: Corridor (int x, int y, List<Corridor> corridors)<br>
-         * MatrixConverter (toCharArray(), fromCharArray())<br>
+         * Potential classes:<br>
+         * Corridor (int x, int y, List<Corridor> corridors)<br>
+         * RouteFinder (char[][] labyrinth, int startX, int startY)<br>
+         * CorridorCreator (fromChar(char ch))<br>
          **/
-
-        throw new UnsupportedOperationException("please implement"); // TODO
+        
+        Labyrinth lab = new Labyrinth(labyrinth);
+        RouteFinder finder = new RouteFinder(lab, startX, startY);
+        RoutePainter painter = new RoutePainter(lab, finder.find());
+        return painter.paint().getLabyrinth();
     }
 }
