@@ -1,0 +1,13 @@
+package com.craigtubb;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CorridorTest {
+
+    @Test
+    public void test() {
+        fail("Not yet implemented");
+    }
+
+}
