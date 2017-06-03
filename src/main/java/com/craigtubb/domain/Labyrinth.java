@@ -1,9 +1,20 @@
-package com.craigtubb;
+package com.craigtubb.domain;
 
+import java.awt.Point;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+/**
+ * Represents a labyrinth structure.
+ * 
+ * @author craigtubb
+ *
+ */
 public class Labyrinth {
+
+    public static final char WALL = 'O';
+    public static final char FREE = ' ';
+    public static final char PATH = '•';
 
     private char[][] labyrinth;
 
@@ -11,24 +22,33 @@ public class Labyrinth {
         this.labyrinth = labyrinth;
     }
 
-    public char getPoint(int x, int y) throws ArrayIndexOutOfBoundsException {
-        return labyrinth[x][y];
+    public char getChar(Point point) throws ArrayIndexOutOfBoundsException {
+        return labyrinth[point.x][point.y];
     }
 
-    public void setPoint(int x, int y, char ch) throws ArrayIndexOutOfBoundsException {
-        labyrinth[x][y] = ch;
+    public void setPath(Point point) throws ArrayIndexOutOfBoundsException {
+        labyrinth[point.x][point.y] = PATH;
     }
-    
-    public boolean hasCharAtPoint(char ch, int x, int y) {
+
+    public boolean wallAtPoint(Point point) {
+        return charAtPoint(WALL, point);
+    }
+
+    public boolean freeAtPoint(Point point) {
+        return charAtPoint(FREE, point);
+    }
+
+    private boolean charAtPoint(char ch, Point point) {
         try {
-            return getPoint(x, y) == ch;
-        } catch(ArrayIndexOutOfBoundsException e) {
+            return getChar(point) == ch;
+        } catch (ArrayIndexOutOfBoundsException e) {
             return false;
         }
     }
-    
-    public boolean isExit(int x, int y) {
-        return x == 0 || x == labyrinth.length - 1 || y == 0 || y == labyrinth[x].length - 1;
+
+    public boolean isExit(Point point) {
+        return point.x == 0 || point.x == labyrinth.length - 1 || point.y == 0
+                || point.y == labyrinth[point.x].length - 1;
     }
 
     public char[][] getLabyrinth() {

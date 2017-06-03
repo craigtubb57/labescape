@@ -1,31 +1,29 @@
-package com.craigtubb;
+package com.craigtubb.domain;
 
+import java.awt.Point;
+
+/**
+ * Represents a free corridor in a labyrinth.
+ * 
+ * @author craigtubb
+ *
+ */
 public class Corridor {
 
-    private int x;
-    private int y;
+    private Point point;
     private Corridor next;
-    
-    public Corridor(int x, int y, Corridor next) {
-        this.x = x;
-        this.y = y;
+
+    public Corridor(Point point, Corridor next) {
+        this.point = point;
         this.next = next;
     }
 
-    public int getX() {
-        return x;
+    public Point getPoint() {
+        return point;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
+    public void setPoint(Point point) {
+        this.point = point;
     }
 
     public Corridor getNext() {
@@ -35,10 +33,10 @@ public class Corridor {
     public void setNext(Corridor next) {
         this.next = next;
     }
-    
+
     @Override
     public String toString() {
-        return String.format("(%s,%s) -> %s", x, y, next);
+        return String.format("(%s) -> %s", point, next);
     }
 
     @Override
@@ -46,8 +44,7 @@ public class Corridor {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((next == null) ? 0 : next.hashCode());
-        result = prime * result + x;
-        result = prime * result + y;
+        result = prime * result + ((point == null) ? 0 : point.hashCode());
         return result;
     }
 
@@ -65,9 +62,10 @@ public class Corridor {
                 return false;
         } else if (!next.equals(other.next))
             return false;
-        if (x != other.x)
-            return false;
-        if (y != other.y)
+        if (point == null) {
+            if (other.point != null)
+                return false;
+        } else if (!point.equals(other.point))
             return false;
         return true;
     }
