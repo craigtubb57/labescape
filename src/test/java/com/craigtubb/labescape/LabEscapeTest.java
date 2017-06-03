@@ -1,9 +1,9 @@
-package com.craigtubb;
+package com.craigtubb.labescape;
 
-import static com.craigtubb.TestHelper.labyrinthWithClearExit;
-import static com.craigtubb.TestHelper.labyrinthWithoutExit;
-import static com.craigtubb.TestHelper.labyrinthWithClearRoute;
-import static com.craigtubb.TestHelper.route;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithClearExit;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithClearRoute;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithoutExit;
+import static com.craigtubb.labescape.TestHelper.route;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
