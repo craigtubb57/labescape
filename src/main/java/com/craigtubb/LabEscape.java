@@ -4,7 +4,9 @@ import com.craigtubb.domain.Labyrinth;
 import com.craigtubb.exception.NoEscapeException;
 
 /**
- * Please implement your solution here
+ * Works out an escape route of the given labyrinth structure, given a starting point.
+ * 
+ * I have left my initial thoughts as a comment in the drawPathForEscape() method.
  */
 public class LabEscape {
 
