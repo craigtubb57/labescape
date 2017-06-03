@@ -1,4 +1,4 @@
-package com.craigtubb;
+package com.craigtubb.labescape;
 
 import com.craigtubb.domain.Labyrinth;
 import com.craigtubb.exception.NoEscapeException;

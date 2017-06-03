@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.craigtubb.exception.NoEscapeException;
+import com.craigtubb.labescape.LabEscape;
 
 public class LabEscapeTest {
 

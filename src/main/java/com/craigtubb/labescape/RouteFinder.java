@@ -1,4 +1,4 @@
-package com.craigtubb;
+package com.craigtubb.labescape;
 
 import java.awt.Point;
 import java.util.ArrayList;
