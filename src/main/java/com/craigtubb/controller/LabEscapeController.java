@@ -1,4 +1,4 @@
-package com.craigtubb;
+package com.craigtubb.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.craigtubb.exception.NoEscapeException;
+import com.craigtubb.labescape.Escaper;
+import com.craigtubb.labescape.LabToEscape;
 
 @Controller
 public class LabEscapeController {

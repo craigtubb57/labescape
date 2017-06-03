@@ -1,4 +1,4 @@
-package com.craigtubb;
+package com.craigtubb.labescape;
 
 public class LabToEscape {
 
