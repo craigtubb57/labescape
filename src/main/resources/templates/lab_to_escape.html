@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Escape the Labyrinth</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Submit your labyrinth</h1>
+    <form action="#" th:action="@{/}" th:object="${labToEscape}" method="post">
+        <textarea rows="8" cols="10" th:field="*{input}" ></textarea>
+        <p>Start at:</p>
+        <p>X: <input type="text" th:field="*{x}" /></p>
+        <p>Y: <input type="text" th:field="*{y}" /></p>
+        <p><input type="submit" value="Escape" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>

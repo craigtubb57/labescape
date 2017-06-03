@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Escape the Labyrinth</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Escape route</h1>
+    <p th:text="'Escape route:'" />
+    <textarea th:rows="${labToEscape.rows}" th:cols="${labToEscape.cols}" th:field="${labToEscape.output}" style="border: none; resize: none;" disabled="disabled"></textarea>
+    <p><a href="/">Escape another Labyrinth</a></p>
+</body>
+</html>
