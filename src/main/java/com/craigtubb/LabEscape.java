@@ -1,13 +1,14 @@
 package com.craigtubb;
 
+import com.craigtubb.domain.Labyrinth;
+import com.craigtubb.exception.NoEscapeException;
+
 /**
- * Please implement your solution here
+ * Works out an escape route of the given labyrinth structure, given a starting point.
+ * 
+ * I have left my initial thoughts as a comment in the drawPathForEscape() method.
  */
 public class LabEscape {
-
-    public static final char WALL = 'O';
-    public static final char FREE = ' ';
-    public static final char PATH = '•';
 
     /**
      * @param labyrinth
@@ -41,7 +42,7 @@ public class LabEscape {
          * RouteFinder (char[][] labyrinth, int startX, int startY)<br>
          * CorridorCreator (fromChar(char ch))<br>
          **/
-        
+
         Labyrinth lab = new Labyrinth(labyrinth);
         RouteFinder finder = new RouteFinder(lab, startX, startY);
         RoutePainter painter = new RoutePainter(lab, finder.find());
