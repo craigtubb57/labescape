@@ -1,13 +1,13 @@
-package com.craigtubb;
+package com.craigtubb.labescape;
 
-import static com.craigtubb.TestHelper.labyrinthWithClearExit;
-import static com.craigtubb.TestHelper.labyrinthWithClearExitAndClosedLoop;
-import static com.craigtubb.TestHelper.labyrinthWithClearExitAndOpenLoop;
-import static com.craigtubb.TestHelper.labyrinthWithUnclearExit;
-import static com.craigtubb.TestHelper.labyrinthWithoutExit;
-import static com.craigtubb.TestHelper.labyrinthWithoutExitAndClosedLoop;
-import static com.craigtubb.TestHelper.labyrinthWithoutExitAndOpenLoop;
-import static com.craigtubb.TestHelper.route;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithClearExit;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithClearExitAndClosedLoop;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithClearExitAndOpenLoop;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithUnclearExit;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithoutExit;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithoutExitAndClosedLoop;
+import static com.craigtubb.labescape.TestHelper.labyrinthWithoutExitAndOpenLoop;
+import static com.craigtubb.labescape.TestHelper.route;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;

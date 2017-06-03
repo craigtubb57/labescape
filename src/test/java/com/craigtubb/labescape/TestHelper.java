@@ -1,4 +1,4 @@
-package com.craigtubb;
+package com.craigtubb.labescape;
 
 import static com.craigtubb.domain.Labyrinth.FREE;
 import static com.craigtubb.domain.Labyrinth.PATH;
