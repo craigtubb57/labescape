@@ -8,6 +8,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.craigtubb.exception.NoEscapeException;
+
 public class LabEscapeTest {
 
     @Test
