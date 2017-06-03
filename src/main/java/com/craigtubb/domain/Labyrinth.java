@@ -14,20 +14,20 @@ public class Labyrinth {
 
     public static final char WALL = 'O';
     public static final char FREE = ' ';
-    public static final char PATH = '•';
+    public static final char PATH = '\u2022';
 
-    private char[][] labyrinth;
+    private char[][] grid;
 
-    public Labyrinth(char[][] labyrinth) {
-        this.labyrinth = labyrinth;
+    public Labyrinth(char[][] grid) {
+        this.grid = grid;
     }
 
     public char getChar(Point point) throws ArrayIndexOutOfBoundsException {
-        return labyrinth[point.x][point.y];
+        return grid[point.x][point.y];
     }
 
     public void setPath(Point point) throws ArrayIndexOutOfBoundsException {
-        labyrinth[point.x][point.y] = PATH;
+        grid[point.x][point.y] = PATH;
     }
 
     public boolean wallAtPoint(Point point) {
@@ -47,17 +47,21 @@ public class Labyrinth {
     }
 
     public boolean isExit(Point point) {
-        return point.x == 0 || point.x == labyrinth.length - 1 || point.y == 0
-                || point.y == labyrinth[point.x].length - 1;
+        return point.x == 0 || point.x == grid.length - 1 || point.y == 0 || point.y == grid[point.x].length - 1;
     }
 
-    public char[][] getLabyrinth() {
-        return labyrinth;
+    public char[][] getGrid() {
+        return grid;
+    }
+
+    public static Labyrinth fromString(String labyrinth) {
+        return new Labyrinth(
+                Arrays.stream(labyrinth.split("\\r?\\n")).map(s -> s.toCharArray()).toArray(size -> new char[size][]));
     }
 
     @Override
     public String toString() {
-        return Arrays.stream(labyrinth).map(ch -> String.valueOf(ch)).map(str -> String.join("", str))
+        return Arrays.stream(grid).map(ch -> String.valueOf(ch)).map(str -> String.join("", str))
                 .collect(Collectors.joining("\n"));
     }
 
@@ -65,7 +69,7 @@ public class Labyrinth {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + Arrays.deepHashCode(labyrinth);
+        result = prime * result + Arrays.deepHashCode(grid);
         return result;
     }
 
@@ -78,7 +82,7 @@ public class Labyrinth {
         if (getClass() != obj.getClass())
             return false;
         Labyrinth other = (Labyrinth) obj;
-        if (!Arrays.deepEquals(labyrinth, other.labyrinth))
+        if (!Arrays.deepEquals(grid, other.grid))
             return false;
         return true;
     }
