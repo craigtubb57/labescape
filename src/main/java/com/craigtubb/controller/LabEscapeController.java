@@ -1,7 +1,10 @@
 package com.craigtubb.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,12 +23,17 @@ public class LabEscapeController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String labSubmit(@ModelAttribute LabToEscape toEscape) {
+    public String labSubmit(@Valid @ModelAttribute LabToEscape toEscape, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "lab_to_escape";
+        }
+
         try {
             Escaper.escape(toEscape);
-        } catch (NoEscapeException e) {
+        } catch (NoEscapeException | ArrayIndexOutOfBoundsException e) {
             return "no_escape";
         }
+
         return "escape";
     }
 }
