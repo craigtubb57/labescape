@@ -5,6 +5,7 @@ import static com.craigtubb.domain.Labyrinth.PATH;
 import static com.craigtubb.domain.Labyrinth.WALL;
 
 import java.awt.Point;
+import static org.mockito.Mockito.*;
 
 import com.craigtubb.domain.Corridor;
 
@@ -162,5 +163,27 @@ public class TestHelper {
 
     private static Point p(int x, int y) {
         return new Point(x, y);
+    }
+
+    static LabToEscape labInternalStart() {
+        LabToEscape lte = mockLabToEscape();
+        when(lte.getX()).thenReturn(1);
+        when(lte.getY()).thenReturn(1);
+        return lte;
+    }
+
+    static LabToEscape labExternalStart() {
+        LabToEscape lte = mockLabToEscape();
+        when(lte.getX()).thenReturn(3);
+        when(lte.getY()).thenReturn(3);
+        return lte;
+    }
+
+    private static LabToEscape mockLabToEscape() {
+        LabToEscape lte = mock(LabToEscape.class);
+        when(lte.getInput()).thenReturn("OOO\r\nO O\r\nOOO");
+        when(lte.getRows()).thenReturn(3);
+        when(lte.getCols()).thenReturn(3);
+        return lte;
     }
 }

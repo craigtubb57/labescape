@@ -45,6 +45,10 @@ public class Labyrinth {
             return false;
         }
     }
+    
+    public void validatePoint(Point point) throws ArrayIndexOutOfBoundsException {
+        getChar(point);
+    }
 
     public boolean isExit(Point point) {
         return point.x == 0 || point.x == grid.length - 1 || point.y == 0 || point.y == grid[point.x].length - 1;
