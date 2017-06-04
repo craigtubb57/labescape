@@ -45,7 +45,7 @@ public class Labyrinth {
             return false;
         }
     }
-    
+
     public void validatePoint(Point point) throws ArrayIndexOutOfBoundsException {
         getChar(point);
     }

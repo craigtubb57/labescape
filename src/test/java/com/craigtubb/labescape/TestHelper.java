@@ -3,9 +3,10 @@ package com.craigtubb.labescape;
 import static com.craigtubb.domain.Labyrinth.FREE;
 import static com.craigtubb.domain.Labyrinth.PATH;
 import static com.craigtubb.domain.Labyrinth.WALL;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.awt.Point;
-import static org.mockito.Mockito.*;
 
 import com.craigtubb.domain.Corridor;
 

@@ -15,7 +15,6 @@ import org.junit.Test;
 import com.craigtubb.domain.Corridor;
 import com.craigtubb.domain.Labyrinth;
 import com.craigtubb.exception.NoEscapeException;
-import com.craigtubb.labescape.RouteFinder;
 
 public class RouteFinderTest {
 
