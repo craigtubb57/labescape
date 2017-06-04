@@ -8,7 +8,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.craigtubb.domain.Labyrinth;
-import com.craigtubb.labescape.RoutePainter;
 
 public class RoutePainterTest {
 
