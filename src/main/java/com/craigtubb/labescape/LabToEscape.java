@@ -1,10 +1,23 @@
 package com.craigtubb.labescape;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class LabToEscape {
 
+    @NotBlank
     private String input;
+
+    @NotNull
+    @Min(1)
     private int x;
+
+    @NotNull
+    @Min(1)
     private int y;
+
     private int rows;
     private int cols;
     private String output;
@@ -12,7 +25,7 @@ public class LabToEscape {
     public String getInput() {
         return input;
     }
-    
+
     public String getInputHTML() {
         return input.replaceAll("\n", "<br>");
     }
@@ -36,7 +49,7 @@ public class LabToEscape {
     public void setY(int y) {
         this.y = y;
     }
-    
+
     public int getRows() {
         return rows;
     }
@@ -56,7 +69,7 @@ public class LabToEscape {
     public String getOutput() {
         return output;
     }
-    
+
     public String getOutputHTML() {
         return output.replaceAll("\n", "<br>");
     }
